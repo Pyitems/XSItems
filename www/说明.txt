@@ -1,0 +1,6 @@
+1.数据库使用mysql
+2.apps 下放个人部分app
+3.static 目录下每个app新建一个子目录
+4.templates 目录下每个app新建一个子目录
+5.后台管理为admin  和 xadmin
+6.默认静态文件为公共
