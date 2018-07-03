@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from artapp.models import book, Art
@@ -33,12 +34,18 @@ def add_tags(request):
         title = request.POST.get('title')
         tag.title = title
         tag.save()
-        return redirect('/art/tags_list/')
+        return redirect('/art/tags_list/1/')
 
 
-def tag_list(request):
+def tag_list(request, page_num):
     tags = book.objects.all()
-    return render(request, 'art/tags_list.html', context={'tags': tags})
+    paginator = Paginator(tags, 3)
+    page = paginator.page(page_num)
+    data = {
+        'page_range': paginator.page_range,
+        'page': page,
+    }
+    return render(request, 'art/tags_list.html', context={'tags': data})
 
 
 def delete_tag(request):
@@ -46,5 +53,5 @@ def delete_tag(request):
     tag = book.objects.filter(id=id1)
     if tag.exists():
         tag.delete()
-    return redirect('/art/tags_list/')
+    return redirect('/art/tags_list/1/')
 

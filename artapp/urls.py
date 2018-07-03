@@ -18,7 +18,7 @@ from artapp import views
 
 urlpatterns = [
     url(r'^tags/', views.add_tags),
-    url(r'^tags_list/', views.tag_list),
+    url(r'^tags_list/(\d+)/$', views.tag_list, name='tags_list'),
     url(r'^index/', views.index),
     url(r'^del_tag/', views.delete_tag),
 

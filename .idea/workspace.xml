@@ -41,10 +41,10 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/artapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-504">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="840">
+              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,10 +53,14 @@
       <file leaf-file-name="tags_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/art/tags_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-196">
-              <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="148">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#548#552#0#HTML" expanded="true" />
+                <element signature="e#552#556#0#HTML" expanded="true" />
+                <element signature="e#802#806#0#HTML" expanded="true" />
+                <element signature="e#806#810#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,7 +69,7 @@
       <file leaf-file-name="edit_tags.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/art/edit_tags.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="280">
               <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
             </state>
           </provider>
@@ -75,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/artapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="134">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="21" />
+              <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
               <folding>
                 <element signature="e#643#675#0" expanded="true" />
               </folding>
@@ -115,8 +119,8 @@
         <option value="$PROJECT_DIR$/artapp/models.py" />
         <option value="$PROJECT_DIR$/templates/art/list.html" />
         <option value="$PROJECT_DIR$/templates/art/edit_tags.html" />
-        <option value="$PROJECT_DIR$/artapp/urls.py" />
         <option value="$PROJECT_DIR$/artapp/views.py" />
+        <option value="$PROJECT_DIR$/artapp/urls.py" />
         <option value="$PROJECT_DIR$/templates/art/tags_list.html" />
       </list>
     </option>
@@ -130,7 +134,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="335" />
     <option name="y" value="53" />
     <option name="width" value="939" />
@@ -243,18 +247,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="382" y="249" width="686" height="646" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32861635" />
-      <window_info active="true" anchor="bottom" id="manage.py@XSItems" visible="true" weight="0.4398422" />
+      <window_info active="true" anchor="bottom" id="manage.py@XSItems" visible="true" weight="0.34573644" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" weight="0.32938856" />
       <window_info anchor="bottom" id="Python Console" weight="0.32861635" />
       <window_info anchor="bottom" id="Terminal" weight="0.32861635" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24121405" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11422088" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" weight="0.4091653" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -301,11 +304,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/XSProject/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-372" />
-      </provider>
-    </entry>
     <entry file="das://e6df78d3-77e3-48e3-a112-530f0cfc12c6/schema/main/table/auth_permission">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -369,39 +367,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/art/edit_tags.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XSProject/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-384" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/artapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="21" />
+          <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
           <folding>
             <element signature="e#643#675#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/artapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/art/edit_tags.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/art/tags_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-196">
-          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        <state relative-caret-position="148">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#548#552#0#HTML" expanded="true" />
+            <element signature="e#552#556#0#HTML" expanded="true" />
+            <element signature="e#802#806#0#HTML" expanded="true" />
+            <element signature="e#806#810#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

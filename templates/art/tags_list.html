@@ -13,9 +13,9 @@
     <th>操作</th>
     </thead>
     <tbody>
-    {% for tag in tags %}
+    {% for tag in tags.page.object_list %}
     <tr>
-    <td align="center">{{ forloop.counter }}</td>
+    <td align="center">{{ tag.id }}</td>
     <td align="center">{{ tag.title }}</td>
     <td align="center">
         <a href="/art/tags/?id={{ tag.id }}">修改</a>
@@ -27,7 +27,9 @@
     <tfoot>
     <td align="center"><button onclick="add()">添加</button></td>
     <td colspan="2" align="center">
-        &lt;&lt;1 2 3 4&gt;&gt;
+        &lt;&lt;{% for page in tags.page_range %}
+        <a href="{% url 'artapp:tags_list' page %}">{{ page }}</a>
+        {% endfor %}&gt;&gt;
     </td>
     </tfoot>
 </table>
