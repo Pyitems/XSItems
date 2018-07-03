@@ -1,0 +1,5 @@
+'''
+__author__  : 'demon'
+__date__  : '2018/7/3/003 10:51'
+'''
+default_app_config = 'users.apps.UsersConfig'

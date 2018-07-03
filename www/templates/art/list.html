@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表页面</title>
+    <style>
+        #tag_nav{
+            padding: 5px;
+            color: aqua;
+            font-size: 18px;
+
+        }
+        #tag_nav a{
+            text-decoration: none;
+            cursor: pointer;
+            padding: 5px;
+            background-color: chartreuse;
+
+            border: 1px solid brown;
+            border-radius: 5px;
+        }
+
+       #tag_nav .tag_all{
+            background-color: darkgoldenrod;
+        }
+
+        #art_container{
+            list-style: none;
+
+        }
+        #art_container li{
+            float: left;
+            margin: 5px;
+
+        }
+         #art_container li img:hover{
+             box-shadow: 2px 2px 5px dodgerblue;
+             transform: scale3d(1.05,1.05,1.05);
+             transition: transform ease-in-out 1s;
+         }
+
+        #art_container li dd{
+            margin: 0px;
+            padding: 2px;
+        }
+
+        #art_container li label{
+            display: block;
+
+        }
+
+        {# 清除浮动 #}
+        #art_container:after{
+            content: '';
+            display: block;
+            height: 0;
+            overflow: hidden;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<h1>文章列表</h1>
+
+<div id="tag_nav">
+    <b>标签分类:</b>
+
+    <a href="/art/" class="tag_all">所有</a>
+    {% for tag in tags %}
+        <a href="/art/?tag={{ tag.id }}">{{ tag.title }}</a>
+    {% endfor %}
+
+
+</div>
+
+<ul id="art_container">
+    <li>
+        <dl>
+           <dt>
+               <img src="http://img.quanshuwang.com/image/144/144912/144912s.jpg"
+               width="200" height="240">
+           </dt>
+            <dd>
+                <label>报告长官：夫人在捉鬼</label>
+                <label>作者： xxx</label>
+                <label>分类：爱情小说</label>
+            </dd>
+            <dd><button>阅读</button></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+           <dt>
+               <img src="http://img.quanshuwang.com/image/144/144912/144912s.jpg"
+               width="200" height="240">
+           </dt>
+            <dd>
+                <label>报告长官：夫人在捉鬼</label>
+                <label>作者： xxx</label>
+                <label>分类：爱情小说</label>
+            </dd>
+            <dd><button>阅读</button></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+           <dt>
+               <img src="http://img.quanshuwang.com/image/144/144912/144912s.jpg"
+               width="200" height="240">
+           </dt>
+            <dd>
+                <label >报告长官：夫人在捉鬼</label>
+                <label>作者： xxx</label>
+                <label>分类：爱情小说</label>
+            </dd>
+            <dd><button>阅读</button></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+           <dt>
+               <img src="http://img.quanshuwang.com/image/144/144912/144912s.jpg"
+               width="200" height="240">
+           </dt>
+            <dd>
+                <label>报告长官：夫人在捉鬼</label>
+                <label>作者： xxx</label>
+                <label>分类：爱情小说</label>
+            </dd>
+            <dd><button>阅读</button></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+           <dt>
+               <img src="http://img.quanshuwang.com/image/144/144912/144912s.jpg"
+               width="200" height="240">
+           </dt>
+            <dd>
+                <label >报告长官：夫人在捉鬼</label>
+                <label>作者： xxx</label>
+                <label>分类：爱情小说</label>
+            </dd>
+            <dd><button>阅读</button></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+           <dt>
+               <img src="http://img.quanshuwang.com/image/144/144912/144912s.jpg"
+               width="200" height="240">
+           </dt>
+            <dd>
+                <label >报告长官：夫人在捉鬼</label>
+                <label>作者： xxx</label>
+                <label>分类：爱情小说</label>
+            </dd>
+            <dd><button>阅读</button></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+           <dt>
+               <img src="http://img.quanshuwang.com/image/144/144912/144912s.jpg"
+               width="200" height="240">
+           </dt>
+            <dd>
+                <label >报告长官：夫人在捉鬼</label>
+                <label>作者： xxx</label>
+                <label>分类：爱情小说</label>
+            </dd>
+            <dd><button>阅读</button></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+           <dt>
+               <img src="http://img.quanshuwang.com/image/144/144912/144912s.jpg"
+               width="200" height="240">
+           </dt>
+            <dd>
+                <label >报告长官：夫人在捉鬼</label>
+                <label>作者： xxx</label>
+                <label>分类：爱情小说</label>
+            </dd>
+            <dd><button>阅读</button></dd>
+        </dl>
+    </li>
+</ul>
+
+</body>
+</html>
