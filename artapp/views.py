@@ -1,6 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
+
 # Create your views here.
 def index(request):
     # 请求路径和请求方法
@@ -11,4 +12,4 @@ def index(request):
     print(request.POST)
     # return HttpResponse('<h1>您好</h1>')
     # return JsonResponse({'name':'lisi', 'age':20})
-    return render(request, 'art/list.html', context={'name':'lisi', 'age':20})
+    return render(request, 'art/list.html', context={'name': 'lisi', 'age': 20})
