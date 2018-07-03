@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分类列表页面</title>
+</head>
+<body>
+<h1>分类列表</h1>
+<table cellpadding="5" cellspacing="0" border="1" width="80%" style="margin: 0 auto;">
+    <thead>
+    <th>序号</th>
+    <th>标题</th>
+    <th>操作</th>
+    </thead>
+    <tbody>
+    {% for tag in tags %}
+    <tr>
+    <td align="center">{{ forloop.counter }}</td>
+    <td align="center">{{ tag.title }}</td>
+    <td align="center">
+        <a href="/art/tags/?id={{ tag.id }}">修改</a>
+        <a onclick="del_tag('{{ tag.id }}','{{ tag.title }}')">删除</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+    <td align="center"><button onclick="add()">添加</button></td>
+    <td colspan="2" align="center">
+        &lt;&lt;1 2 3 4&gt;&gt;
+    </td>
+    </tfoot>
+</table>
+</body>
+<script>
+    function del_tag(id,title) {
+        if(confirm('你想删除名为'+title+'的分类?')){
+            window.open('/art/del_tag/?id='+id)
+        }
+    }
+    function add() {
+        window.open('/art/tags/')
+    }
+</script>
+</html>

@@ -3,9 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <title>文章列表</title>
+    <style>
+        #tag_nav{
+            padding: 5px;
+            font-size: 15px;
+        }
+        #tag_nav a{
+            text-decoration: none;
+            cursor: pointer;
+            padding: 5px;
+            background-color: lightblue;
+            border: 1px solid blue;
+            border-radius: 5px;
+        }
+        #tag_nav .tag_all{
+            background-color: greenyellow;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        ul li{
+            float: left;
+            margin: 5px;
+        }
+        ul li:hover{
+            box-shadow: 2px 2px 5px gray;
+            transform: scale(1.1,1.1);
+            transition: transform ease-in-out 0.5s;
+        }
+        ul label{
+            display: block;
+        }
+        ul dd{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
 <h1>文章列表</h1>
-{{ name }}-{{ age }}
+<div id="tag_nav">
+    <b>标签分类:</b>
+    <a href="/art/" class="tag_all">所有</a>
+    {% for tag in tags %}
+        <a href="/art/?tag={{ tag.id }}">{{ tag.title }}</a>
+    {% endfor %}
+</div>
+<ul>
+    <li>
+        <dl>
+            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
+            <dd>
+                <label>呵呵哒</label>
+                <label>作者: XXX</label>
+                <label>分类: 现代小说</label>
+            </dd>
+            <dd>
+                <button>阅读</button>
+            </dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
+            <dd>
+                <label>呵呵哒</label>
+                <label>作者: XXX</label>
+                <label>分类: 现代小说</label>
+            </dd>
+            <dd>
+                <button>阅读</button>
+            </dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
+            <dd>
+                <label>呵呵哒</label>
+                <label>作者: XXX</label>
+                <label>分类: 现代小说</label>
+            </dd>
+            <dd>
+                <button>阅读</button>
+            </dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
+            <dd>
+                <label>呵呵哒</label>
+                <label>作者: XXX</label>
+                <label>分类: 现代小说</label>
+            </dd>
+            <dd>
+                <button>阅读</button>
+            </dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
+            <dd>
+                <label>呵呵哒</label>
+                <label>作者: XXX</label>
+                <label>分类: 现代小说</label>
+            </dd>
+            <dd>
+                <button>阅读</button>
+            </dd>
+        </dl>
+    </li>
+
+</ul>
 </body>
 </html>

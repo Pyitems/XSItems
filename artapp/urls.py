@@ -17,5 +17,9 @@ from django.conf.urls import url
 from artapp import views
 
 urlpatterns = [
-    url(r'', views.index),
+    url(r'^tags/', views.add_tags),
+    url(r'^tags_list/', views.tag_list),
+    url(r'^index/', views.index),
+    url(r'^del_tag/', views.delete_tag),
+
 ]
