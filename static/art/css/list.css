@@ -1,0 +1,75 @@
+#tag_nav {
+    padding: 5px;
+    font-size: 15px;
+}
+
+#tag_nav a {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px;
+    background-color: lightblue;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+#tag_nav .tag_all {
+    background-color: greenyellow;
+}
+
+ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+ul li {
+    float: left;
+    margin: 5px;
+}
+
+ul li img:hover {
+    box-shadow: 2px 2px 5px gray;
+    transform: scale(1.1, 1.1);
+    transition: transform ease-in-out 0.5s;
+}
+
+ul label {
+    display: block;
+}
+
+ul dd {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+}
+.paginator {
+    font-size: 1.1em;
+}
+
+.paginator a {
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: floralwhite;
+}
+
+.paginator a:hover {
+    background-color: darkgray;
+}
+
+.paginator .active {
+    background-color: deeppink;
+}
+
+#searchkey {
+    font-size: 1.2em;
+    padding: 5px;
+    height: 39px;
+    margin-bottom: 1px;
+}
+
+.navbar-brand > img {
+    display: inline-block;
+    width: 25px;
+}

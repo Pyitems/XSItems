@@ -25,7 +25,7 @@ def index(request):
         tag_id = '0'
     else:
         art = Art.objects.filter(tags_id=tag_id).all()
-    paginator = Paginator(art, 1)
+    paginator = Paginator(art, 2)
     if int(pageNum) > paginator.num_pages:
         pageNum = paginator.num_pages
     elif int(pageNum) <= 0:

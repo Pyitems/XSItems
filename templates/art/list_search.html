@@ -1,14 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>搜索页面</title>
-</head>
-<body>
-<h1>文章列表</h1>
-{% for art in arts %}
-    {{ art.title }}
-{% endfor %}
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block css %}
+    <link rel="stylesheet" href="{% static 'art/css/list.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>文章列表</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>书名</th>
+            <th>作者</th>
+            <th>类型</th>
+            <th>简介</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for art in arts %}
+        <tr>
+            <th>{{ art.id }}</th>
+            <td>{{ art.title }}</td>
+            <td>{{ art.author }}</td>
+            <td>{{ art.tags.title }}</td>
+            <td>{{ art.summary }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
