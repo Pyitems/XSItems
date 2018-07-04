@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>文章列表</title>
     <style>
-        #tag_nav{
+        #tag_nav {
             padding: 5px;
             font-size: 15px;
         }
-        #tag_nav a{
+
+        #tag_nav a {
             text-decoration: none;
             cursor: pointer;
             padding: 5px;
@@ -16,107 +17,133 @@
             border: 1px solid blue;
             border-radius: 5px;
         }
-        #tag_nav .tag_all{
+
+        #tag_nav .tag_all {
             background-color: greenyellow;
         }
-        ul{
+
+        ul {
             list-style: none;
             overflow: hidden;
         }
-        ul li{
+
+        ul li {
             float: left;
             margin: 5px;
         }
-        ul li:hover{
+
+        ul li:hover {
             box-shadow: 2px 2px 5px gray;
-            transform: scale(1.1,1.1);
+            transform: scale(1.1, 1.1);
             transition: transform ease-in-out 0.5s;
         }
-        ul label{
+
+        ul label {
             display: block;
         }
-        ul dd{
+
+        ul dd {
             margin: 0;
             padding: 0;
+        }
+
+        .paginator {
+            background-color: lightgoldenrodyellow;
+            padding: 5px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .paginator a {
+            padding: 5px 10px;
+            text-decoration: none;
+            background-color: floralwhite;
+        }
+
+        .paginator a:hover {
+            background-color: darkgray;
+        }
+
+        .paginator .active {
+            background-color: deeppink;
+        }
+
+        #searchkey {
+            font-size: 1.2em;
+            padding: 5px;
+            height: 39px;
+            margin-bottom: 1px;
+        }
+
+        .btn {
+            display: inline-block;
+            height: 50px;
+            width: 80px;
+            border: 1px lightgray solid;
+            border-left: none;
+            line-height: 55px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 <h1>文章列表</h1>
+<div id="search">
+    <form method="post" action="/art/search/">{% csrf_token %}<input id="searchkey" name="searchkey" type="text"
+                                                                     placeholder="搜索书名或作者"><span class="btn btn_default"
+                                                                                                 onclick="search()">搜索</span>
+    </form>
+</div>
 <div id="tag_nav">
     <b>标签分类:</b>
-    <a href="/art/" class="tag_all">所有</a>
+    <a href="/art/index/" {% if tag_id == 0 %}class="tag_all" {% endif %}>所有</a>
     {% for tag in tags %}
-        <a href="/art/?tag={{ tag.id }}">{{ tag.title }}</a>
+        <a {% if tag_id == tag.id %}
+            class='tag_all'
+        {% endif %} href="/art/index/?tag={{ tag.id }}">{{ tag.title }}</a>
     {% endfor %}
 </div>
 <ul>
-    <li>
-        <dl>
-            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
-            <dd>
-                <label>呵呵哒</label>
-                <label>作者: XXX</label>
-                <label>分类: 现代小说</label>
-            </dd>
-            <dd>
-                <button>阅读</button>
-            </dd>
-        </dl>
-    </li>
-    <li>
-        <dl>
-            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
-            <dd>
-                <label>呵呵哒</label>
-                <label>作者: XXX</label>
-                <label>分类: 现代小说</label>
-            </dd>
-            <dd>
-                <button>阅读</button>
-            </dd>
-        </dl>
-    </li>
-    <li>
-        <dl>
-            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
-            <dd>
-                <label>呵呵哒</label>
-                <label>作者: XXX</label>
-                <label>分类: 现代小说</label>
-            </dd>
-            <dd>
-                <button>阅读</button>
-            </dd>
-        </dl>
-    </li>
-    <li>
-        <dl>
-            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
-            <dd>
-                <label>呵呵哒</label>
-                <label>作者: XXX</label>
-                <label>分类: 现代小说</label>
-            </dd>
-            <dd>
-                <button>阅读</button>
-            </dd>
-        </dl>
-    </li>
-    <li>
-        <dl>
-            <dt><img src="http://www.codingke.com/themes/codingnew-1/img/new_index/emp_car_img1.png" alt="" width="120" height="80"></dt>
-            <dd>
-                <label>呵呵哒</label>
-                <label>作者: XXX</label>
-                <label>分类: 现代小说</label>
-            </dd>
-            <dd>
-                <button>阅读</button>
-            </dd>
-        </dl>
-    </li>
-
+    {% for art in arts %}
+        <li>
+            <dl>
+                <dt><img src="/static/art_ups/{{ art.image }}" alt="" width="200" height="240"></dt>
+                <dd>
+                    <label>{{ art.title }}</label>
+                    <label>作者: {{ art.author }}</label>
+                    <label>分类: {{ art.tags.title }}</label>
+                </dd>
+                <dd>
+                    <button>阅读</button>
+                </dd>
+            </dl>
+        </li>
+    {% endfor %}
 </ul>
+<div class="paginator">
+    {% if page.has_previous %}
+        <a href="/art/index/?tag={{ tag_id }}&page={{ page.previous_page_number }}">上一页</a>
+    {% endif %}
+    {% for i in pageRange %}
+        {% if i == page.number %}
+            <a class="active" href="/art/index/?tag={{ tag_id }}&page={{ i }}">{{ i }}</a>
+        {% else %}
+            <a href="/art/index/?tag={{ tag_id }}&page={{ i }}">{{ i }}</a>
+        {% endif %}
+    {% endfor %}
+    {% if page.has_next %}
+        <a href="/art/index/?tag={{ tag_id }}&page={{ page.next_page_number }}">下一页</a>
+    {% endif %}
+</div>
+<script>
+    function search() {
+        var searchDOM = document.getElementById('searchkey')
+        if (searchDOM.value.trim().length == 0) {
+            alert('请输入搜索内容');
+        } else {
+            document.forms[0].submit();
+        }
+    }
+</script>
 </body>
 </html>

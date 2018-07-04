@@ -13,7 +13,7 @@ class Art(models.Model):
     author = models.CharField(max_length=10, blank=True, verbose_name='作者')
     summary = models.TextField(verbose_name='简介')
     # image_url = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='', verbose_name='小说图片')
+    image = models.ImageField(upload_to='images', verbose_name='小说图片')
     counter = models.IntegerField(default=0, verbose_name='浏览次数')
     publish_time = models.DateTimeField(auto_now_add=True)
     tags = models.ForeignKey(book, on_delete=models.SET_NULL, null=True)

@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator
-from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
+
 from artapp.models import book, Art
 
 
@@ -14,7 +14,28 @@ def index(request):
     # print(request.POST)
     # return HttpResponse('<h1>您好</h1>')
     # return JsonResponse({'name':'lisi', 'age':20})
-    return render(request, 'art/list.html', context={'arts': Art.objects.all(), 'tags': book.objects.all()})
+    # 获取请求参数中的tag标签的id
+    tag_id = request.GET.get('tag')
+    pageNum = request.GET.get('page')
+    if not pageNum:
+        pageNum = 1
+    # 如果tag_id不存在时,则表示所有
+    if (not tag_id) or (not int(tag_id)):
+        art = Art.objects.all()
+        tag_id = '0'
+    else:
+        art = Art.objects.filter(tags_id=tag_id).all()
+    paginator = Paginator(art, 1)
+    if int(pageNum) > paginator.num_pages:
+        pageNum = paginator.num_pages
+    elif int(pageNum) <= 0:
+        pageNum = 1
+    page = paginator.page(pageNum)
+
+    return render(request, 'art/list.html',
+                  context={'arts': page.object_list, 'pageRange': paginator.page_range, 'page': page,
+                           'tag_id': int(tag_id),
+                           'tags': book.objects.all()})
 
 
 def add_tags(request):
@@ -54,4 +75,3 @@ def delete_tag(request):
     if tag.exists():
         tag.delete()
     return redirect('/art/tags_list/1/')
-
